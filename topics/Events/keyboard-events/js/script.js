@@ -44,3 +44,31 @@ function draw() {
     ellipse(ball.x, ball.y, ball.size);
     pop();
 }
+/**
+ * or, 
+ * keys: {
+ * redKey: 82, //r
+ * blueKey: 66 //b
+ * }
+ * 
+ * or option 2
+ * 
+ * function keyPressed(event) {
+ * if (event.keyCode === ball.keys.blueKey)
+ * ball.fill = ball.fills.blue;
+ * }
+ */
+//can also be with keycodes that can still be used in uppercase
+function keyPressed(event) {
+    if (event.key === "r") {
+        ball.fill = ball.fills.red;
+    }
+    else if (event.key === "b") {
+        ball.fill = ball.fills.blue;
+    }
+}
+function keyReleased() {
+    if (event.key === "r" || event.key === "b") {
+        ball.fill = ball.fills.white;
+    }
+}
