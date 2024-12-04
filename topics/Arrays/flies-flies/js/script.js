@@ -1,9 +1,9 @@
 /**
- * Flies
+ * Flies flies
  * Pippin Barr
  * 
  * A program for drawing flies on the canvas. The flies are stored
- * in an array.
+ * in an array. We display them with a for...of loop
  */
 
 "use strict";
@@ -44,10 +44,17 @@ function draw() {
 
     // Display each fly in the array
     for (let fly of flies) {
-        push();
-        fill(0);
-        ellipse(fly.x, fly.y, fly.size);
-        pop();
+        drawFly(fly);
     }
+}
 
+/**
+ * Draws the provided fly to the canvas
+ */
+function drawFly(fly) {
+    push();
+    noStroke();
+    fill(0);
+    ellipse(fly.x, fly.y, fly.size);
+    pop();
 }
