@@ -89,7 +89,7 @@ function keyPressed() {
 function mousePressed() {
     //check all the flies
     for (let fly of flies) {
-        const d = dist(mouseX, mouseY, fly.y, fly.y);
+        const d = dist(mouseX, mouseY, fly.x, fly.y);
         if (d < fly.size / 2) {
             //this fly was clicked
             //get the index of this fly
