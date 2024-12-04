@@ -59,7 +59,15 @@ function placeHero() {
     // Choose a random spot for the hero
     hero.x = random(0, width);
     hero.y = random(0, height);
+
+    let d = dist(hero.x, hero.y, dangerZone.x, dangerZone.y)
     // This COULD BE IN THE DANGER ZONE
+
+    while (d < hero.size / 2 + dangerZone.size / 2) {
+        hero.x = random(0, width);
+        hero.y = random(0, height);
+        d = dist(hero.x, her.y, dangerZone.x, dangerZone.y);
+    }
 }
 
 /**
