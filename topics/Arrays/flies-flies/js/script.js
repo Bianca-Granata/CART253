@@ -47,10 +47,16 @@ function draw() {
 
     // Display each fly in the array
     for (let fly of flies) {
+        moveFly(fly);
         drawFly(fly);
     }
 }
 
+//moves a fly according to its buzziness- randomly
+function moveFly(fly) {
+    fly.x += random(-fly.buzziness, fly.buzziness);
+    fly.y += random(-fly.buzziness, fly.buzziness);
+}
 /**
  * Draws the provided fly to the canvas
  */
